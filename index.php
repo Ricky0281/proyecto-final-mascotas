@@ -166,7 +166,7 @@ $resultado = $conn->query($sql);
 
 </div>
 
-<a class="boton-whatsapp" href="https://wa.me/573027552684?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
+<a class="boton-whatsapp" href="https://wa.me/573027552684git add .?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
     WhatsApp
 </a>
 
