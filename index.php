@@ -162,9 +162,16 @@ $resultado = $conn->query($sql);
 
 </div>
 
-<a class="boton-whatsapp" href="https://wa.me/573027552684?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
-    WhatsApp
-</a>
+<div class="whatsapp-card">
+    <div class="whatsapp-card-icono">💬</div>
+    <div class="whatsapp-card-contenido">
+        <span class="whatsapp-card-titulo">Contactanos por WhatsApp</span>
+        <p>Estamos listos para ayudarte con tu pedido, resolver dudas y recomendarte el mejor producto para tu mascota.</p>
+        <a class="whatsapp-card-boton" href="https://wa.me/573027552684?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
+            Escribir por WhatsApp
+        </a>
+    </div>
+</div>
 
 </body>
 </html>
