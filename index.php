@@ -43,9 +43,6 @@ $resultado = $conn->query($sql);
                     <h3>Collar para perro</h3>
                     <p>Collar resistente y comodo para paseos diarios.</p>
                     <span class="precio">$ 20.000 COP</span>
-                    <a class="boton-whatsapp" href="https://wa.me/TUNUMERO?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
-    Contactanos por WhatsApp
-</a>
                 </div>
             </article>
 
@@ -55,7 +52,6 @@ $resultado = $conn->query($sql);
                     <h3>Arena para gato</h3>
                     <p>Control de olores y facil limpieza para uso diario.</p>
                     <span class="precio">$ 35.000 COP</span>
-                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Arena para gato')">Comprar ahora</button>
                 </div>
             </article>
 
@@ -65,7 +61,6 @@ $resultado = $conn->query($sql);
                     <h3>Juguete para mascota</h3>
                     <p>Ideal para entretenimiento y actividad fisica.</p>
                     <span class="precio">$ 18.000 COP</span>
-                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Juguete para mascota')">Comprar ahora</button>
                 </div>
             </article>
 
@@ -75,7 +70,6 @@ $resultado = $conn->query($sql);
                     <h3>Concentrado premium</h3>
                     <p>Alimento balanceado para perros y gatos.</p>
                     <span class="precio">$ 75.000 COP</span>
-                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Concentrado premium')">Comprar ahora</button>
                 </div>
             </article>
         </div>
@@ -168,19 +162,9 @@ $resultado = $conn->query($sql);
 
 </div>
 
-<a class="boton-whatsapp" href="https://wa.me/573027552684git add .?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
+<a class="boton-whatsapp" href="https://wa.me/3027552684?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
     WhatsApp
 </a>
-
-<script>
-function seleccionarProducto(nombreProducto) {
-    document.getElementById("producto").value = nombreProducto;
-    document.getElementById("formulario-pedido").scrollIntoView({
-        behavior: "smooth"
-    });
-    document.getElementById("cliente").focus();
-}
-</script>
 
 </body>
 </html>

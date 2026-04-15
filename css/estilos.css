@@ -188,27 +188,6 @@ body {
     background: #1d4ed8;
 }
 
-.comprar {
-    display: block;
-    width: 100%;
-    margin-top: 14px;
-    padding: 12px 16px;
-    background: #16a34a;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    opacity: 1;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-.comprar:hover {
-    background: #15803d;
-}
-
 .editar {
     background: #f59e0b;
 }
@@ -285,8 +264,8 @@ table tr:hover {
     background: #25d366;
     color: #ffffff;
     text-decoration: none;
-    padding: 14px 20px;
-    border-radius: 999px;
+    padding: 14px 18px;
+    border-radius: 50px;
     font-weight: bold;
     font-size: 14px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
