@@ -7,13 +7,13 @@ $contrasena = "WD73qJcC9rxTdB2";
 $basedatos = "if0_41214981_tiendamascotas";
 
 // Crear conexión
-$conn = new mysqli($host, $usuario, $contrasena, $basedatos);
+$conexion = new mysqli($host, $usuario, $contrasena, $basedatos);
 
 // Verificar conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
 // Ajuste de caracteres
-$conn->set_charset("utf8");
+$conexion->set_charset("utf8");
 ?>
