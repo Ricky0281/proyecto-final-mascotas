@@ -43,7 +43,9 @@ $resultado = $conn->query($sql);
                     <h3>Collar para perro</h3>
                     <p>Collar resistente y comodo para paseos diarios.</p>
                     <span class="precio">$ 20.000 COP</span>
-                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Collar para perro')">Comprar ahora</button>
+                    <a class="boton-whatsapp" href="https://wa.me/TUNUMERO?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
+    Contactanos por WhatsApp
+</a>
                 </div>
             </article>
 
