@@ -21,15 +21,13 @@ $resultado = $conn->query($sql);
             <span class="etiqueta">Proyecto final - Sistemas 2</span>
             <h1>Pet Shop Ricky</h1>
             <p>
-                Aplicativo web para registrar, consultar, editar y eliminar pedidos
-                de una tienda de articulos para mascotas.
-            </p>
-            <div class="hero-badges">
-                <span>PHP</span>
-                <span>MySQL</span>
-                <span>CRUD</span>
-                <span>Hosting</span>
-            </div>
+    Todo lo que tu mascota necesita en un solo lugar.
+    Calidad, cuidado y amor en cada producto.
+</p>
+
+<p>
+    Haz tu pedido facil y rapido con nosotros.
+</p>
         </div>
     </header>
 
