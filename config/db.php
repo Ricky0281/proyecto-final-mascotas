@@ -1,14 +1,390 @@
-<?php
-$host = "sql101.infinityfree.com";
-$usuario = "if0_41214981";
-$contrasena = 'WD73qJcC9rxTdB2';
-$basedatos = "if0_41214981_tiendamascotas";
-
-$conn = new mysqli($host, $usuario, $contrasena, $basedatos);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-$conn->set_charset("utf8");
-?>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+.pagina {
+    width: 100%;
+}
+
+.hero {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb, #0f172a);
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero-texto {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 700px;
+    font-size: 18px;
+    color: #e5e7eb;
+    margin-bottom: 10px;
+}
+
+.catalogo,
+.paneles {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 20px;
+}
+
+.seccion-titulo {
+    margin-bottom: 20px;
+}
+
+.seccion-titulo h2 {
+    font-size: 30px;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.seccion-titulo p {
+    color: #6b7280;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card-producto {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-producto img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.producto-info {
+    padding: 18px;
+}
+
+.producto-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.producto-info p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.precio {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+
+.paneles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.panel {
+    background: white;
+    border-radius: 18px;
+    padding: 26px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.campo input {
+    padding: 13px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.campo-boton {
+    justify-content: end;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 11px 16px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.guardar {
+    background: #2563eb;
+}
+
+.guardar:hover {
+    background: #1d4ed8;
+}
+
+.editar {
+    background: #f59e0b;
+}
+
+.editar:hover {
+    background: #d97706;
+}
+
+.eliminar {
+    background: #ef4444;
+}
+
+.eliminar:hover {
+    background: #dc2626;
+}
+
+.volver {
+    background: #6b7280;
+    margin-top: 15px;
+}
+
+.volver:hover {
+    background: #4b5563;
+}
+
+.tabla-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    min-width: 900px;
+}
+
+table th,
+table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table th {
+    background: #2563eb;
+    color: white;
+}
+
+table tr:hover {
+    background: #f9fafb;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.estado-vacio {
+    padding: 22px;
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* NUEVO WHATSAPP BONITO */
+.whatsapp-card {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.20);
+    border: 1px solid #e5e7eb;
+    z-index: 9999;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.whatsapp-card-icono {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 14px;
+    background: #dcfce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.whatsapp-card-contenido {
+    flex: 1;
+}
+
+.whatsapp-card-titulo {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.whatsapp-card-contenido p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.whatsapp-card-boton {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #25d366, #1faa52);
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-card-boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(37, 211, 102, 0.32);
+}
+
+@media (max-width: 992px) {
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .whatsapp-card {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        width: auto;
+        padding: 16px;
+    }
+
+    .whatsapp-card-icono {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 20px;
+    }
+
+    .whatsapp-card-titulo {
+        font-size: 16px;
+    }
+
+    .whatsapp-card-contenido p {
+        font-size: 13px;
+    }
+
+    .whatsapp-card-boton {
+        width: 100%;
+        text-align: center;
+    }
+}
