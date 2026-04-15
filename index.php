@@ -33,7 +33,7 @@ $resultado = $conn->query($sql);
     <section class="catalogo">
         <div class="seccion-titulo">
             <h2>Catalogo destacado</h2>
-            <p>Selecciona un producto y el formulario se llena automaticamente</p>
+            <p>Encuentra productos especiales para consentir a tu mascota.</p>
         </div>
 
         <div class="grid-productos">
