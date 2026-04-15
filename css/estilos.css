@@ -44,22 +44,7 @@ body {
     max-width: 700px;
     font-size: 18px;
     color: #e5e7eb;
-}
-
-.hero-badges {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 22px;
-}
-
-.hero-badges span {
-    background: white;
-    color: #1d4ed8;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .catalogo,
@@ -131,6 +116,7 @@ body {
     font-weight: bold;
     padding: 8px 12px;
     border-radius: 10px;
+    margin-bottom: 14px;
 }
 
 .paneles {
@@ -202,6 +188,16 @@ body {
     background: #1d4ed8;
 }
 
+.comprar {
+    background: #16a34a;
+    width: 100%;
+    margin-top: 14px;
+}
+
+.comprar:hover {
+    background: #15803d;
+}
+
 .editar {
     background: #f59e0b;
 }
@@ -271,6 +267,24 @@ table tr:hover {
     color: #6b7280;
 }
 
+.boton-whatsapp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.boton-whatsapp:hover {
+    background: #1faa52;
+}
+
 @media (max-width: 992px) {
     .grid-productos {
         grid-template-columns: repeat(2, 1fr);
@@ -304,5 +318,11 @@ table tr:hover {
 
     .panel {
         padding: 18px;
+    }
+
+    .boton-whatsapp {
+        right: 15px;
+        bottom: 15px;
+        padding: 12px 16px;
     }
 }

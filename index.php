@@ -18,23 +18,22 @@ $resultado = $conn->query($sql);
 
     <header class="hero">
         <div class="hero-texto">
-            <span class="etiqueta">Proyecto final - Sistemas 2</span>
+            <span class="etiqueta">Tienda de mascotas</span>
             <h1>Pet Shop Ricky</h1>
             <p>
-    Todo lo que tu mascota necesita en un solo lugar.
-    Calidad, cuidado y amor en cada producto.
-</p>
-
-<p>
-    Haz tu pedido facil y rapido con nosotros.
-</p>
+                Todo lo que tu mascota necesita en un solo lugar.
+                Calidad, cuidado y amor en cada producto.
+            </p>
+            <p>
+                Haz tu pedido facil y rapido con nosotros.
+            </p>
         </div>
     </header>
 
     <section class="catalogo">
         <div class="seccion-titulo">
             <h2>Catalogo destacado</h2>
-            <p>Productos de ejemplo para la tienda de mascotas</p>
+            <p>Selecciona un producto y el formulario se llena automaticamente</p>
         </div>
 
         <div class="grid-productos">
@@ -44,6 +43,7 @@ $resultado = $conn->query($sql);
                     <h3>Collar para perro</h3>
                     <p>Collar resistente y comodo para paseos diarios.</p>
                     <span class="precio">$ 20.000 COP</span>
+                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Collar para perro')">Comprar ahora</button>
                 </div>
             </article>
 
@@ -53,6 +53,7 @@ $resultado = $conn->query($sql);
                     <h3>Arena para gato</h3>
                     <p>Control de olores y facil limpieza para uso diario.</p>
                     <span class="precio">$ 35.000 COP</span>
+                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Arena para gato')">Comprar ahora</button>
                 </div>
             </article>
 
@@ -62,6 +63,7 @@ $resultado = $conn->query($sql);
                     <h3>Juguete para mascota</h3>
                     <p>Ideal para entretenimiento y actividad fisica.</p>
                     <span class="precio">$ 18.000 COP</span>
+                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Juguete para mascota')">Comprar ahora</button>
                 </div>
             </article>
 
@@ -71,13 +73,14 @@ $resultado = $conn->query($sql);
                     <h3>Concentrado premium</h3>
                     <p>Alimento balanceado para perros y gatos.</p>
                     <span class="precio">$ 75.000 COP</span>
+                    <button type="button" class="btn comprar" onclick="seleccionarProducto('Concentrado premium')">Comprar ahora</button>
                 </div>
             </article>
         </div>
     </section>
 
     <section class="paneles">
-        <div class="panel formulario-panel">
+        <div class="panel formulario-panel" id="formulario-pedido">
             <div class="seccion-titulo">
                 <h2>Registrar nuevo pedido</h2>
                 <p>Ingresa los datos del cliente y del producto solicitado</p>
@@ -162,6 +165,20 @@ $resultado = $conn->query($sql);
     </section>
 
 </div>
+
+<a class="boton-whatsapp" href="https://wa.me/573027552684?text=Hola,%20quiero%20informacion%20sobre%20los%20productos%20de%20Pet%20Shop%20Ricky" target="_blank">
+    WhatsApp
+</a>
+
+<script>
+function seleccionarProducto(nombreProducto) {
+    document.getElementById("producto").value = nombreProducto;
+    document.getElementById("formulario-pedido").scrollIntoView({
+        behavior: "smooth"
+    });
+    document.getElementById("cliente").focus();
+}
+</script>
 
 </body>
 </html>
